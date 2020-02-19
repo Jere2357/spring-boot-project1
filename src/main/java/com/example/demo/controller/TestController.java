@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import com.example.demo.dto.TestDTO;
 import com.example.demo.entity.TestEntity;
 import com.example.demo.service.TestService;
-import org.aspectj.weaver.ast.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,12 +51,12 @@ public class TestController {
         return testService.createTestDTO(testDTO);
     }
 
-    @GetMapping(path = "dto/{id}")
+    @GetMapping(path = "dto/{id}")   //localhost:8080/test/dto/{id}
     public TestEntity getById(@PathVariable Long id) {
         return testService.getById(id);
     }
 
-    @GetMapping(path = "dto/name/{name}")
+    @GetMapping(path = "dto/name/{name}")    //localhost:8080/test/dto/{name}
     public List<TestEntity> getAllByName(@PathVariable String name) {
         return testService.getAllByName(name);
     }
